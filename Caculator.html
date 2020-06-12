@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>calculator</title>
+    <script>
+        function close_window() {
+  if (confirm("Muốn thoát hay gì?")) {
+    close();
+  }
+}
+        function insert(num){
+            document.form.textview.value = document.form.textview.value+num
+        }
+        function kq(){
+            var kk = document.form.textview.value;
+            if(kk){
+            document.form.textview.value = eval(kk)
+        }
+    }
+    function xoah(){
+        document.form.textview.value ="";
+
+    }
+    function back(){
+        var kk = document.form.textview.value;
+        document.form.textview.value = kk.substring(0,kk.length-1);
+    }
+    </script>
+    <style>
+
+
+        .button{
+            width: 50px;
+            height: 50px;
+            font-size: 25px;
+            margin: 2px;
+            cursor: pointer;
+            color: white;
+            background-color: black;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .textview{
+
+            width: 213px;
+            height: 20px;
+            margin: 5px;
+            padding: 5px;
+            font-size: 25px;
+        }
+        /* body{
+            width: 900px;
+            height: 900px;
+            background-color: burlywood;
+
+        } */
+        .main{
+
+            width: 100%;
+            height: 900px;
+            background-attachment: fixed;
+            background-color: brown;
+        }
+        #machine{
+            margin-left: 46%;
+            margin-top: auto   ;
+        }
+        #cong{
+            width: 108px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="bg"></div>
+    <div class="main">
+        <div id="machine">
+        <form name="form">
+            <input class="textview" name="textview">
+        </form>
+        <tr>
+            <td><input class="button" type="button" value=" C " onclick="xoah()"></td>
+            <td><input class="button" type="button" value=" <- " onclick="back()"></td>
+            <td><input class="button" type="button" value="esc" onclick="close_window()"></td>
+            <td><input class="button" type="button" value="  / " onclick="insert('/')"></td>
+        </tr><br>
+    <tr>
+        <td><input class="button" type="button" value=" 7 " onclick="insert(7)"><td>
+        <td><input class="button" type="button" value=" 8 " onclick="insert(8)"></td>
+        <td><input class="button" type="button" value="  9 " onclick="insert(9)"></td>
+        <td><input class="button" type="button" value=" x" onclick="insert('*')"></td>
+    </tr><br>
+    <tr>
+        <td><input class="button" type="button" value=" 4 " onclick="insert(4)"></td>
+        <td><input class="button" type="button" value=" 5 " onclick="insert(5)"></td>
+        <td><input class="button" type="button" value=" 6 " onclick="insert(6)"></td>
+        <td><input class="button" type="button" value="  - " onclick="insert('-')"></td>
+    </tr><br>
+    <tr>
+        <td><input class="button" type="button" value=" 1 " onclick="insert(1)"></td>
+        <td><input class="button" type="button" value=" 2 " onclick="insert(2)"></td>
+        <td><input class="button" type="button" value=" 3 " onclick="insert(3)"></td>
+        <td><input class="button" type="button" value=" + " onclick="insert('+')"></td>
+    </tr><br>
+    <tr>
+        <td><input class="button" type="button" value="   0   " onclick="insert(0)"></td>
+        <td><input class="button" type="button" value="  .  " onclick="insert('.')"></td>
+        <td><input id="cong" class="button" type="button" value="  =  " onclick="kq()"></td>
+
+    </tr>
+        </div>
+    </div>
+
+</body>
+</html>
