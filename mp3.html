@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+background-color: gray;
+transition: 0.1s;">
+    
+    <img src="hie.jpg" alt="" id="img" style="width: 250px;min-width: 250px;height: 250px;min-height: 250px;border-radius: 50%;transition: 0.1s;">
+
+    <script>
+        flag = true
+        i = 0
+        audio  = new Audio();
+        audio.src = 'music5.mp3';
+        match = null;
+        document.onclick = () =>{
+            if(flag == true){
+                
+                if(i<1){
+                    context = new AudioContext()
+                    match = context.createAnalyser()
+                    context.createMediaElementSource(audio).connect(match)
+                    match.connect(context.destination)
+                    i=100
+                }
+            
+                audio.play()
+                loop()
+                flag = false
+            }else{
+                audio.pause()
+                flag = true
+            }
+        }
+        function loop(){
+            window.requestAnimationFrame(loop)
+
+            fbc = new Uint8Array(match.frequencyBinCount);
+            match.getByteFrequencyData(fbc)
+            avg = fbc.reduce((a,b) => a + b,0 )/fbc.length
+            
+            document.body.style.backgroundColor = "rgb("+(2*avg)+","+(avg)+","+(avg*1.2)+")"
+            document.getElementById('img').style.width = avg*5 +"px";
+            document.getElementById('img').style.height = avg*5 +"px";
+            
+
+        }
+    </script>
+</body>
+</html>
