@@ -1,57 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body style="display: flex;
-justify-content: center;
-align-items: center;
-height: 100vh;
-background-color: gray;
-transition: 0.1s;">
-    
-    <img src="hie.jpg" alt="" id="img" style="width: 250px;min-width: 250px;height: 250px;min-height: 250px;border-radius: 50%;transition: 0.1s;">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Here is some things about me." />
+    <meta name="keywords" content="Chả mong gì chỉ mong giàu 🤣🤣🤣" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="warpspeed.min.js"></script>
+    <title>Thanh Cute</title>
+  </head>
+  <body>
+      <div class="main">
+    <div id="background">
+      <canvas
+        id="bg_canvas"
+        style="position: fixed; top: 0; left: 0; width: 100%; height: 100%"
+      ></canvas>
+      <script>
+        var x = new WarpSpeed("bg_canvas");
+      </script>
+    </div>
 
-    <script>
-        flag = true
-        i = 0
-        audio  = new Audio();
-        audio.src = 'music5.mp3';
-        match = null;
-        document.onclick = () =>{
-            if(flag == true){
-                
-                if(i<1){
-                    context = new AudioContext()
-                    match = context.createAnalyser()
-                    context.createMediaElementSource(audio).connect(match)
-                    match.connect(context.destination)
-                    i=100
-                }
-            
-                audio.play()
-                loop()
-                flag = false
-            }else{
-                audio.pause()
-                flag = true
-            }
-        }
-        function loop(){
-            window.requestAnimationFrame(loop)
+    <div class="bar-main">
+      <a href="https://fb.me/thanh.dz.az" target="_blank" id="btn1" class="button1 bouncy">Facebook</a>
+      <a href="something" id="btn2" class="button1 bouncy" style="animation-delay: 0.07s"
+        >Github</a
+      >
+      <a href="mp3.html" id="btn3" class="button1 bouncy" style="animation-delay: 0.14s"
+        >YouTube</a
+      >
+      <a href="something" id="btn4" class="button1 bouncy" style="animation-delay: 0.21s"
+        >About me</a
+      >
+    </div>
 
-            fbc = new Uint8Array(match.frequencyBinCount);
-            match.getByteFrequencyData(fbc)
-            avg = fbc.reduce((a,b) => a + b,0 )/fbc.length
-            
-            document.body.style.backgroundColor = "rgb("+(2*avg)+","+(avg)+","+(avg*1.2)+")"
-            document.getElementById('img').style.width = avg*5 +"px";
-            document.getElementById('img').style.height = avg*5 +"px";
-            
+    <div class="avatar"> 
+       <img src="hie.jpg" alt="" >
+        
+    </div>
+    <div class="content">
+      <table>
+        <tr>
+          <td>Full name: </td>
+          <td></td>
+          <td style="text-transform: uppercase;">Cầm Văn Thành</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  
+  
+  </div>
 
-        }
-    </script>
-</body>
+
+  </body>
 </html>

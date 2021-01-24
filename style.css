@@ -1,0 +1,58 @@
+.bar-main{
+    float: right;
+    margin: 3em;
+}
+
+#background{
+    z-index: -10000;
+}
+.bouncy{
+    text-decoration: none;
+    color: rgb(254, 255, 254);
+    font-weight: 650;
+    padding: 1em;
+    animation: bouncy 3s infinite linear;
+    border: 1px rgb(240, 62, 62) solid;
+    position: relative;
+    }
+    #btn1:hover,#btn2:hover,#btn3:hover,#btn4:hover{
+        top: -0.3em;
+        animation-delay: 1000s;
+        background-color: rgba(160, 94, 94, 0.637);
+    }
+.avatar{
+    z-index: 1000;
+    position: absolute;
+
+    left: 300px;
+    top: 300px;
+}
+.avatar img{
+    width: 250px;
+    border-radius: 50%;
+    border: 1px rgb(167, 77, 77) solid;
+}
+.avatar img:hover{
+    box-shadow: 0 0 16px white;
+}
+.content{
+    width: 600px;
+    height: auto;
+    position: absolute;
+    color: aliceblue;
+    right: 250px;
+    bottom: 600px;
+    font-weight: 800;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 1px;
+}
+@keyframes bouncy {
+
+    0%{top: 0em}
+    40%{top:0em}
+    43%{top: -0.9em;}
+    46%{top: 0em}
+    48%{top: -0.4em}
+    50%{top: 0em}
+    100%{top: 0em}
+    }
