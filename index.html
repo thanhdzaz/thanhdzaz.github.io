@@ -11,13 +11,13 @@ align-items: center;
 height: 100vh;
 background-color: gray;">
     
-    <img src="hie.jpg" alt="" id="img" style="width: 250px;min-width: 250px;height: 250px;min-height: 250px;border-radius: 50%;">
+    <img src="hie.jpg" alt="" id="img" style="width: 250px;min-width: 250px;height: 250px;min-height: 250px;border-radius: 50%;transition: 0.2s;">
 
     <script>
         flag = true
         i = 0
         audio  = new Audio();
-        audio.src = 'music.mp3';
+        audio.src = 'music4.mp3';
         match = null;
         document.onclick = () =>{
             if(flag == true){
@@ -46,8 +46,8 @@ background-color: gray;">
             avg = fbc.reduce((a,b) => a + b,0 )/fbc.length
             
             document.body.style.backgroundColor = "rgb("+avg+","+avg+","+avg+")"
-            document.getElementById('img').style.width = avg*5 +"px";
-            document.getElementById('img').style.height = avg*5 +"px";
+            document.getElementById('img').style.width = avg*4 +"px";
+            document.getElementById('img').style.height = avg*4 +"px";
             
 
         }
