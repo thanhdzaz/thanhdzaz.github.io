@@ -15,6 +15,7 @@ transition: 0.1s;">
     <img src="hie.jpg" alt="" id="img" style="width: 250px;min-width: 250px;height: 250px;min-height: 250px;border-radius: 50%;transition: 0.1s;">
 
     <script>
+        var rota = null;
         flag = true
         i = 0
         audio  = new Audio();
@@ -30,11 +31,13 @@ transition: 0.1s;">
                     match.connect(context.destination)
                     i=100
                 }
-            
+                
                 audio.play()
                 loop()
                 flag = false
+                rota = setInterval(rotator, 70);
             }else{
+                clearInterval(rota);
                 audio.pause()
                 flag = true
             }
@@ -52,6 +55,21 @@ transition: 0.1s;">
             
 
         }
+
+        var deg = 0;
+      function rotator() {
+        console.log(3)
+
+        var div = document.getElementById("img");
+        deg = deg+1;
+      
+
+        div.style.webkitTransform = "rotate(" + deg + "deg)";
+        div.style.mozTransform = "rotate(" + deg + "deg)";
+        div.style.msTransform = "rotate(" + deg + "deg)";
+        div.style.oTransform = "rotate(" + deg + "deg)";
+        div.style.transform = "rotate(" + deg + "deg)";
+      }
     </script>
 </body>
 </html>
