@@ -4,25 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #control_bar{
+            position: absolute;
+            bottom: -100px;
+            transition: 1s;
+            opacity: 0;
+            color: aliceblue;
+            font-weight: 700;
+            
+
+        }
+        #audio_hie{
+            width: 500px;
+        }
+
+    </style>
 </head>
 <body style="display: flex;
 justify-content: center;
 align-items: center;
 height: 100vh;
 background-color: gray;
-transition: 0.1s;">
+transition: 0.1s; position: relative;">
     
     <img src="hie.jpg" alt="" id="img" style="width: 250px;min-width: 250px;height: 250px;min-height: 250px;border-radius: 50%;transition: 0.1s;">
+
+
+    <figure id="control_bar">
+        <figcaption>Listen to "Cháy mẹ xe":</figcaption>
+        <br>
+        <audio id="audio_hie"
+            controls
+            src="adu.mp3">
+                
+        </audio>
+    </figure>
 
     <script>
         var rota = null;
         flag = true
         i = 0
-        audio  = new Audio();
-        audio.src = 'adu.mp3';
+        audio  = document.getElementById('audio_hie');
         match = null;
         document.onclick = () =>{
-            if(flag == true){
+           var bar = document.getElementById('control_bar');  
+           if(flag == true){
+               
                 
                 if(i<1){
                     context = new AudioContext()
@@ -31,7 +59,8 @@ transition: 0.1s;">
                     match.connect(context.destination)
                     i=100
                 }
-                
+                bar.style.opacity = '1';
+                bar.style.bottom = '100px';
                 audio.play()
                 loop()
                 flag = false
@@ -39,6 +68,8 @@ transition: 0.1s;">
             }else{
                 clearInterval(rota);
                 audio.pause()
+                bar.style.opacity = '0';
+                bar.style.bottom = '-100px';
                 flag = true
             }
         }
