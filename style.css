@@ -46,6 +46,24 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     letter-spacing: 1px;
 }
+
+#control_bar{
+    position: absolute;
+    left: 125px;
+    bottom: -100px;
+    transition: 1s;
+    opacity: 0;
+    color: aliceblue;
+    font-weight: 700;
+    
+
+}
+
+#audio_hie{
+    width: 500px;
+}
+
+
 @keyframes bouncy {
 
     0%{top: 0em}
