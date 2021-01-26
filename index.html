@@ -11,6 +11,7 @@
   
   </head>
   <body>
+   <div class="f1">
     <div class="main">
       <div id="background">
         <canvas
@@ -18,7 +19,7 @@
           style="position: fixed; top: 0; left: 0; width: 100%; height: 100%"
         ></canvas>
         <script>
-          var x = new WarpSpeed("bg_canvas");
+          var x = new WarpSpeed("bg_canvas",{"speed":3,"speedAdjFactor":0.03,"density":0.7,"shape":"circle","warpEffect":true,"warpEffectLength":6,"depthFade":true,"starSize":3,"backgroundColor":"hsl(263,45%,7%)"});
         </script>
       </div>
 
@@ -31,35 +32,41 @@
           >Facebook</a
         >
         <a
-          href="something"
+          href="https://github.com/thanhdzaz"
           id="btn2"
+          target="_blank"
           class="button1 bouncy"
           style="animation-delay: 0.07s"
           >Github</a
         >
         <a
-          href="mp3.html"
+          href="https://www.youtube.com/channel/UCcPENE9Ts_LdKNfqiDN00xQ"
           id="btn3"
+          target="_blank"
           class="button1 bouncy"
           style="animation-delay: 0.14s"
           >YouTube</a
         >
         <a
-          href="something"
+          href="mp3.html"
           id="btn4"
           class="button1 bouncy"
           style="animation-delay: 0.21s"
           >About me</a
         >
       </div>
+      <hr class="horizon" style="top: 0">
       <figure id="control_bar">
-        <figcaption>Listen to "Pota Pota - Cospine Remix":</figcaption>
+        <figcaption>Listen to "Mood Remix":</figcaption>
         <br>
         <audio id="audio_hie"
             controls
-            src="music4.mp3">
+            src="music.mp3">
+           
+
                 
-        </audio>
+        </audio> 
+       
     </figure>
       <div class="avatar">
         <img src="hie.jpg" alt="" id="img" style="width: 250px;min-width: 250px;height: 250px;min-height: 250px;border-radius: 50%;transition: 0.1s;">
@@ -67,14 +74,13 @@
       <div class="content">
         <table>
           <tr>
-            <td>Full name:</td>
-            <td></td>
-            <td style="text-transform: uppercase">Cầm Văn Thành</td>
+            <td colspan="3">Hi there I'm <span style="text-transform: uppercase">Thanh</span></td>
+           
+            
           </tr>
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td colspan="3">I'm learning to be IT Engineer</td>
+            
           </tr>
           <tr>
             <td></td>
@@ -99,6 +105,7 @@
         </table>
       </div>
     </div>
+    <hr class="horizon" style="bottom: 0;">
     <script>
       var rota = null;
       flag = true;
@@ -137,9 +144,12 @@
         match.getByteFrequencyData(fbc);
         avg = fbc.reduce((a, b) => a + b, 0) / fbc.length;
 
-        document.body.style.backgroundColor =
-          "rgb(" + 2 * avg + "," + avg + "," + avg * 1.2 + ")";
-        document.getElementById("img").style.boxShadow = "0 0 "+avg * 1.2 + "px rgb(167, 77, 77)";
+        // document.body.style.backgroundColor =
+        //   "rgb(" + 2 * avg + "," + avg + "," + avg * 1.2 + ")";
+        document.getElementById("img").style.boxShadow = "0 0 "+avg * 1.4 + "px rgb(167, 77, 77,0.8)";
+        document.getElementsByClassName('horizon')[0].style.boxShadow = "0 0 "+avg * 1.2 + "px rgb(114, 245, 250)";
+        document.getElementsByClassName('horizon')[1].style.boxShadow = "0 0 "+avg * 1.2 + "px rgb(114, 245, 250)";
+        // document.getElementById('audio_hie').style.boxShadow = "0 0 "+avg * 1 + "px rgb(114, 245, 250)";
         // document.getElementById("img").style.height = avg * 5 + "px";
       }
       var hie = true;
@@ -164,8 +174,13 @@
         div.style.msTransform = "rotate(" + deg + "deg)";
         div.style.oTransform = "rotate(" + deg + "deg)";
         div.style.transform = "rotate(" + deg + "deg)";
-        console.log(deg);
+        // console.log(deg);
       }
     </script>
+  </div>
+
+  <div class="f2">
+
+  </div>
   </body>
 </html>

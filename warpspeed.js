@@ -37,7 +37,7 @@ function WarpSpeed(targetId,config){
 	var ctx=canvas.getContext("2d");
 	ctx.fillStyle=this.BACKGROUND_COLOR;
 	ctx.fillRect(0,0,1,1);
-	ctx.fillStyle=config.starColor==undefined?"#fc0303":config.starColor;
+	ctx.fillStyle=config.starColor==undefined?"#FC0303":config.starColor;
 	ctx.fillRect(0,0,1,1);
 	var color=ctx.getImageData(0,0,1,1).data;
 	this.STAR_R=color[0]; this.STAR_G=color[1]; this.STAR_B=color[2];

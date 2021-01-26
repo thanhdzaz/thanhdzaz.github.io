@@ -1,67 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      #div {
-        width: 250px;
-        height: 250px;
-        /* border-radius: 50%; */
-        background-color: blueviolet;
-        -webkit-transition: all 0.5s ease-in-out;
-        -moz-transition: all 0.5s ease-in-out;
-        -o-transition: all 0.5s ease-in-out;
-        transition: all 0.5s ease-in-out;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="div"></div>
-    <button id="button">click</button>
-    <script>
-      var rotated = false;
-      var rota = null;
-      document.getElementById("div").onclick = function () {
-        var div = document.getElementById("div");
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    video::cue {
+  background-image: linear-gradient(to bottom, dimgray, lightgray);
+  color: papayawhip;
+}
 
-        if (!rotated) {
-        rotated = !rotated;
-        rota = setInterval(rotator, 180);
-
-
-
-           
-        } else {
-
-       
-        //   div.style.webkitTransform = "rotate(" + 0 + "deg)";
-        //   div.style.mozTransform = "rotate(" + 0 + "deg)";
-        //   div.style.msTransform = "rotate(" + 0 + "deg)";
-        //   div.style.oTransform = "rotate(" + 0 + "deg)";
-        //   div.style.transform = "rotate(" + 0 + "deg)";
-          clearInterval(rota);
-          rotated = !rotated;
-
-        }
-
-        
-      };
-      var deg = 0;
-      function rotator() {
-        console.log(3)
-
-        var div = document.getElementById("div");
-        deg = deg+1;
-      
-
-        div.style.webkitTransform = "rotate(" + deg + "deg)";
-        div.style.mozTransform = "rotate(" + deg + "deg)";
-        div.style.msTransform = "rotate(" + deg + "deg)";
-        div.style.oTransform = "rotate(" + deg + "deg)";
-        div.style.transform = "rotate(" + deg + "deg)";
-      }
-    </script>
-  </body>
+video::cue(b) {
+  color: peachpuff;
+}
+  </style>
+</head>
+<body>
+  <audio id="video" controls style="margin-top: 100px;">
+    <source src="mood.mp3" >
+    <track kind="subtitles" label="Eu"  src="subtile.vtt" srclang="en" default></track>
+  </audio>
+</body>
 </html>
