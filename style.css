@@ -67,6 +67,10 @@
 
 #audio_hie{
     width: 500px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
 }
 
 table{
@@ -84,7 +88,7 @@ table{
     height: 100vh;
 }
 .f2{
-    background-image: url('/wl-op-46s.jpg');
+    background-image: url('wl-op-46s.jpg');
     background-attachment: fixed;
 }
 @keyframes bouncy {
@@ -120,3 +124,53 @@ table{
   ::-webkit-scrollbar-thumb:hover {
     background: #813434; 
   }
+
+
+
+  @media (max-width: 500px) {
+ .avatar{
+        left: 35%;
+             
+ }
+ .avatar img{
+        width: 150px;
+        height: 150px;
+
+ }
+ body{
+     width: 100%;
+ }
+ .f1{
+     width: 100%;
+ }
+ .bouncy{
+     
+    text-decoration: none;
+    color: rgb(136, 248, 248);
+    font-weight: 650;
+    padding: 0.3em;
+    animation: bouncy 3s infinite linear;
+    border: 1px rgb(240, 62, 62) solid;
+    position: relative;
+ }
+ #control_bar{
+
+ }
+ #audio_hie{
+     width: 350px;
+     margin: auto;
+ }
+ .content{
+    width: auto;
+    height: auto;
+    top: 20%;
+    left: 10%;
+    position: absolute;
+    color: aliceblue;
+    right: unset;
+    bottom: unset;
+    font-weight: 800;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 1px;
+}
+}
