@@ -42,7 +42,7 @@ function loop() {
     document.getElementById("img").style.boxShadow = "0 0 " + avg * 1.4 + "px rgb(167, 77, 77,0.8)";
     document.getElementsByClassName('horizon')[0].style.boxShadow = "0 0 " + avg * 1.2 + "px rgb(114, 245, 250)";
     document.getElementsByClassName('horizon')[1].style.boxShadow = "0 0 " + avg * 1.2 + "px rgb(114, 245, 250)";
-    document.getElementById('audio_hie').style.boxShadow = "0 0 "+avg / 2 + "px rgb(114, 245, 250)";
+    document.getElementById('audio_hie').style.boxShadow = "0 0 " + avg / 2 + "px rgb(114, 245, 250)";
     // document.getElementById("img").style.height = avg * 5 + "px";
 }
 var hie = true;
@@ -75,3 +75,16 @@ function delay(URL) {
     x.SPEED = 40;
     setTimeout(function () { window.location = URL }, 400);
 }
+
+function gotoNextPl() {
+    var position =
+        window.innerHeight;
+
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        clearTimeout(scrollAnimation)
+    } else {
+        window.scrollBy(0, Math.max(1, Math.floor(position / 8)));
+        scrollAnimation = setTimeout("gotoNextPl()", 25);
+    }
+}
+
