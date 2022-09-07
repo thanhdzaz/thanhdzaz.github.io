@@ -519,7 +519,7 @@ section.about{
     background-color: var(--first-color);
 }
 .skills__html{
-    width: 90% !important;
+    width: 100% !important;
 }
 .skills__css{
     width: 90% !important;
@@ -546,6 +546,9 @@ section.about{
     width: 70% !important;
 }
 
+.skills__figma{
+    width: 60% !important;
+}
 .skills__close .skills__list{
     height: 0;
     overflow: hidden;

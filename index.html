@@ -3,654 +3,137 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="assets/img/ficon.png" type="image/x-icon" />
-    <!--==================== UNICONS ====================-->
-    <link
-      rel="stylesheet"
-      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
-    />
-    <!--==================== SWIPER CSS ====================-->
-    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
-    <!--==================== CSS ====================-->
-    <link rel="stylesheet" href="assets/css/styles.css" />
-
-    <title>Thành nè</title>
+    <meta name="description" content="Here is some things about me." />
+    <meta name="keywords" content="Chả mong gì chỉ mong giàu 🤣🤣🤣" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="logo.ico" type="image/x-icon" />
+    <script src="warpspeed.min.js"></script>
+    <title>Thanh Cute</title>
   </head>
   <body>
-    <!--==================== HEADER ====================-->
-    <header class="header" id="header">
-      <nav class="nav container">
-        <a href="#" class="nav__logo">Thành</a>
-        <div class="nav__menu" id="nav-menu">
-          <ul class="nav__list grid">
-            <li class="nav__item">
-              <a href="#home" class="nav__link"
-                ><i class="uit nav__icon uil-estate"></i>Home
-              </a>
-            </li>
-            <li class="nav__item">
-              <a href="#about" class="nav__link">
-                <i class="uit nav__icon uil-user"></i>Về tôi
-              </a>
-            </li>
-            <li class="nav__item">
-              <a href="#skills" class="nav__link">
-                <i class="uit nav__icon uil-file-alt"></i>Kỹ năng
-              </a>
-            </li>
-            <li class="nav__item">
-              <a href="#services" class="nav__link">
-                <i class="uit nav__icon uil-briefcase-alt"></i>Dịch vụ
-              </a>
-            </li>
-          </ul>
-          <i class="uit uil-times nav__close" id="nav-close"></i>
+    <div class="f1">
+      <div class="main">
+        <div id="background">
+          <canvas
+            id="bg_canvas"
+            style="position: fixed; top: 0; left: 0; width: 100%; height: 100%"
+          ></canvas>
+          <script>
+            var x = new WarpSpeed("bg_canvas", {
+              speed: 3,
+              speedAdjFactor: 0.03,
+              density: 0.7,
+              shape: "circle",
+              warpEffect: true,
+              warpEffectLength: 6,
+              depthFade: true,
+              starSize: 3,
+              backgroundColor: "hsl(263,45%,7%)",
+            });
+          </script>
         </div>
-        <div class="nav__btns">
-          <i class="uil uil-moon change-theme" id="theme-button"></i>
-          <div class="nav__toggle" id="nav-toggle">
-            <i class="uit uil-apps"></i>
-          </div>
+
+        <div class="bar-main">
+          <a
+            href="javascript:delay('https://fb.me/thanh.dz.az')"
+            id="btn1"
+            class="button1 bouncy"
+            >Facebook</a
+          >
+          <a
+            href="javascript:delay('https://github.com/thanhdzaz')"
+            id="btn2"
+            class="button1 bouncy"
+            style="animation-delay: 0.07s"
+            >Github</a
+          >
+          <a
+            href="javascript:delay('https://www.youtube.com/channel/UCcPENE9Ts_LdKNfqiDN00xQ')"
+            id="btn3"
+            class="button1 bouncy"
+            style="animation-delay: 0.14s"
+            >YouTube</a
+          >
+          <a
+            href="javascript:delay('index2.html')"
+            id="btn4"
+            class="button1 bouncy"
+            style="animation-delay: 0.21s"
+            >About me</a
+          >
         </div>
-      </nav>
-    </header>
-
-    <!--==================== MAIN ====================-->
-    <main class="main" onresize="()=> console.log('a')">
-      <!--==================== HOME ====================-->
-      <section class="home section" id="home">
-        <div class="home__container container grid">
-          <div class="home__content grid">
-            <div class="home__social">
-              <a
-                href="https://fb.me/thanh.dz.az"
-                target="_blank"
-                class="home__social-icon"
-                ><i class="uil uil-facebook-f"></i
-              ></a>
-              <a href="#" target="_blank" class="home__social-icon"
-                ><i class="uil uil-youtube"></i
-              ></a>
-              <a
-                href="https://github.com/thanhdzaz"
-                target="_blank"
-                class="home__social-icon"
-                ><i class="uil uil-github-alt"></i
-              ></a>
-            </div>
-            <div class="home__img">
-              <svg
-                class="home__blob"
-                viewBox="0 0 200 187"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-              >
-                <mask id="mask0" mask-type="alpha">
-                  <path
-                    d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 
-                            130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 
-                            97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 
-                            0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"
-                  />
-                </mask>
-                <g mask="url(#mask0)">
-                  <path
-                    d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 
-                            165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 
-                            129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
-                            -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"
-                  />
-                  <image
-                    x="5"
-                    y="-15"
-                    class="home__blob-img"
-                    xlink:href="assets/img/img.png"
-                  />
-                </g>
-              </svg>
-            </div>
-
-            <div class="home__data">
-              <h1 class="home__title">Thành</h1>
-              <h3 class="home__subtitle">Mõm</h3>
-              <p class="home__description">
-                Mõm xuyên quốc gia, Mõm ảo ma canada
-              </p>
-              <a href="#" class="button button--flex">
-                Contact <i class="uil uil-message button__icon"></i>
-              </a>
-            </div>
-          </div>
-          <div class="home__scroll">
-            <a href="#about" class="home__scroll-button button--flex">
-              <i class="uil uil-mouse-alt button__icon home__scroll-mouse"></i>
-              <span class="home__scroll-name">Xuống</span>
-              <i class="uil uil-arrow-down home__scroll-arrow"></i>
-            </a>
-          </div>
+        <hr class="horizon" style="top: 0" />
+        <figure id="control_bar">
+          <figcaption>Listen to "Mood Remix":</figcaption>
+          <br />
+          <audio id="audio_hie" controls src="mood.mp3"></audio>
+        </figure>
+        <div class="avatar">
+          <img
+            src="main_logo.jpg"
+            alt=""
+            id="img"
+            style="border-radius: 50%; transition: 0.1s"
+          />
         </div>
-      </section>
-
-      <!--==================== ABOUT ====================-->
-      <section class="about section" id="about">
-        <h2 class="section__title">About me</h2>
-        <span class="section__subtitle">' Nhạt nhẽo (❁´◡`❁) '</span>
-
-        <div class="about__container container grid">
-          <img src="assets/img/about.png" alt="" class="about__img" />
-          <div class="about__data">
-            <p class="about__description">
-              `` Anh là người của IT. Anh có 1 phần mềm khi nghịch chơi xíu sẽ
-              thành phần cứng em có muốn thử không? ''
-            </p>
-            <div class="about__info">
-              <div>
-                <span class="about__info-title">0+</span>
-                <spam class="about__info-name"
-                  >Năm <br />
-                  Kinh nghiệm</spam
-                >
-              </div>
-              <div>
-                <span class="about__info-title">0+</span>
-                <spam class="about__info-name"
-                  >Năm <br />
-                  Kinh nghiệm</spam
-                >
-              </div>
-              <div>
-                <span class="about__info-title">0+</span>
-                <spam class="about__info-name"
-                  >Năm <br />
-                  Kinh nghiệm</spam
-                >
-              </div>
-            </div>
-            <div class="about__buttons">
-              <a
-                download=""
-                onclick="alert('Lười quá k làm CV 🤡')"
-                class="button button-flex"
-              >
-                CV <i class="uil uil-download-alt button-icon"></i>
-              </a>
-            </div>
-          </div>
+        <div class="content">
+          <table>
+            <tr>
+              <td colspan="3">
+                Hi there I'm
+                <span style="text-transform: uppercase">Thanh</span>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="3">I'm a Frontend Developer</td>
+            </tr>
+            <tr>
+              <td colspan="3">
+                With 1 Years experience in Reactjs & React Native
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+            </tr>
+            <tr>
+              <td>
+                <div style="position: relative">
+                  <button class="sroll-down" onclick="gotoNextPl()">
+                    Next
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </table>
         </div>
-      </section>
-
-      <!--==================== SKILLS ====================-->
-      <section class="skills section" id="skills">
-        <h2 class="section__title">Kỹ năng</h2>
-        <span class="section__subtitle">' Mõm(❁´◡`❁) '</span>
-
-        <div class="skills__container container grid">
-          <!-- 11111111111111111 -->
-          <div class="skills__content skills__close">
-            <div class="skills__header">
-              <i class="uil uil-brackets-curly skills__icon"></i>
-              <div>
-                <h1 class="skill__titles">Frontend Dev</h1>
-                <span class="skills__subtitle"> Gần 1 năm kinh nghiệm </span>
-              </div>
-              <i class="uil uil-angle-down skills__arrow"></i>
-            </div>
-            <div class="skills__list grid">
-              <div class="skills__data">
-                <div class="skills__titles">
-                  <h3 class="skills__name">HTML</h3>
-                  <span class="skills__number">90%</span>
-                </div>
-                <div class="skills__bar">
-                  <span class="skills__percentage skills__html"> </span>
-                </div>
-              </div>
-              <div class="skills__data">
-                <div class="skills__titles">
-                  <h3 class="skills__name">CSS</h3>
-                  <span class="skills__number">90%</span>
-                </div>
-                <div class="skills__bar">
-                  <span class="skills__percentage skills__css"> </span>
-                </div>
-              </div>
-              <div class="skills__data">
-                <div class="skills__titles">
-                  <h3 class="skills__name">JS</h3>
-                  <span class="skills__number">90%</span>
-                </div>
-                <div class="skills__bar">
-                  <span class="skills__percentage skills__js"> </span>
-                </div>
-              </div>
-              <div class="skills__data">
-                <div class="skills__titles">
-                  <h3 class="skills__name">React</h3>
-                  <span class="skills__number">90%</span>
-                </div>
-                <div class="skills__bar">
-                  <span class="skills__percentage skills__react"> </span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 333333333 -->
-          <div class="skills__content skills__close">
-            <div class="skills__header">
-              <i class="uil uil-server skills__icon"></i>
-              <div>
-                <h1 class="skill__titles">Backend Dev</h1>
-                <span class="skills__subtitle"> 0 năm kinh nghiệm </span>
-              </div>
-              <i class="uil uil-angle-down skills__arrow"></i>
-            </div>
-            <div class="skills__list grid">
-              <div class="skills__data">
-                <div class="skills__titles">
-                  <h3 class="skills__name">PHP</h3>
-                  <span class="skills__number">0%</span>
-                </div>
-                <div class="skills__bar">
-                  <span class="skills__percentage skills__php"> </span>
-                </div>
-              </div>
-              <div class="skills__data">
-                <div class="skills__titles">
-                  <h3 class="skills__name">Python</h3>
-                  <span class="skills__number">60%</span>
-                </div>
-                <div class="skills__bar">
-                  <span class="skills__percentage skills__python"> </span>
-                </div>
-              </div>
-              <div class="skills__data">
-                <div class="skills__titles">
-                  <h3 class="skills__name">Node JS</h3>
-                  <span class="skills__number">0%</span>
-                </div>
-                <div class="skills__bar">
-                  <span class="skills__percentage skills__nodejs"> </span>
-                </div>
-              </div>
-              <div class="skills__data">
-                <div class="skills__titles">
-                  <h3 class="skills__name">C#</h3>
-                  <span class="skills__number">0%</span>
-                </div>
-                <div class="skills__bar">
-                  <span class="skills__percentage skills__c"> </span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- 33333333333 -->
-
-          <div class="skills__content skills__close">
-            <div class="skills__header">
-              <i class="uil uil-edit skills__icon"></i>
-              <div>
-                <h1 class="skill__titles">Design</h1>
-                <span class="skills__subtitle"> Gần 1 năm kinh nghiệm </span>
-              </div>
-              <i class="uil uil-angle-down skills__arrow"></i>
-            </div>
-            <div class="skills__list grid">
-              <div class="skills__data">
-                <div class="skills__titles">
-                  <h3 class="skills__name">Photoshop</h3>
-                  <span class="skills__number">70%</span>
-                </div>
-                <div class="skills__bar">
-                  <span class="skills__percentage skills__photoshop"> </span>
-                </div>
-              </div>
-              <!-- <div class="skills__data">
-                  <div class="skills__titles">
-                    <h3 class="skills__name">CSS</h3>
-                    <span class="skills__number">90%</span>
-                  </div>
-                  <div class="skills__bar">
-                    <span class="skills__percentage skills__css"> </span>
-                  </div>
-                </div> -->
-              <!-- <div class="skills__data">
-                  <div class="skills__titles">
-                    <h3 class="skills__name">JS</h3>
-                    <span class="skills__number">90%</span>
-                  </div>
-                  <div class="skills__bar">
-                    <span class="skills__percentage skills__js"> </span>
-                  </div>
-                </div> -->
-              <!-- <div class="skills__data">
-                  <div class="skills__titles">
-                    <h3 class="skills__name">React</h3>
-                    <span class="skills__number">90%</span>
-                  </div>
-                  <div class="skills__bar">
-                    <span class="skills__percentage skills__react"> </span>
-                  </div>
-                </div> -->
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!--==================== QUALIFICATION ====================-->
-      <section class="qualification section">
-        <h2 class="section__title">Trình độ</h2>
-        <span class="section__subtitle"> Học vấn & Công việc </span>
-        <div class="qualification__container container">
-          <div class="qualification__tabs">
-            <div
-              class="qualification__button button--flex qualification__active"
-              data-target="#education"
-            >
-              <i class="uil uil-graduation-cap qualification__icon"></i>Học vấn
-            </div>
-            <div class="qualification__button button--flex" data-target="#work">
-              <i class="uil uil-briefcase-alt qualification__icon"></i>Công việc
-            </div>
-          </div>
-
-          <div class="qualification__sections">
-            <!--==================== QUALIFICATION1 ====================-->
-            <div
-              class="qualification__content qualification__active"
-              data-content
-              id="education"
-            >
-              <!-- 1 -->
-              <div class="qualification__data">
-                <div>
-                  <h3 class="qualification__title">Lập Trình Viên</h3>
-                  <span class="qualification__subtitle"> BKACAD </span>
-                  <div class="qualification__calendar">
-                    <i class="uil uil-calendar-alt"></i>
-                    2019 - 2021
-                  </div>
-                </div>
-                <div>
-                  <span class="qualification__rounder"> </span>
-                  <span class="qualification__line"> </span>
-                </div>
-              </div>
-              <!-- 2 -->
-              <div class="qualification__data">
-                <div></div>
-                <div>
-                  <span class="qualification__rounder"> </span>
-                  <!-- <span class="qualification__line"> </span> -->
-                </div>
-                <div>
-                  <h3 class="qualification__title">Vẫn thế</h3>
-                  <span class="qualification__subtitle"> BKACAD </span>
-                  <div class="qualification__calendar">
-                    <i class="uil uil-calendar-alt"></i>
-                    2019 - 2021
-                  </div>
-                </div>
-              </div>
-              <!-- 1 
-              <div class="qualification__data">
-                <div>
-                  <h3 class="qualification__title">Lập Trình Viên</h3>
-                  <span class="qualification__subtitle"> BKACAD </span>
-                  <div class="qualification__calendar">
-                    <i class="uil uil-calendar-alt"></i>
-                    2019 - 2021
-                  </div>
-                </div>
-                <div>
-                  <span class="qualification__rounder"> </span>
-                  <span class="qualification__line"> </span>
-                </div>
-              </div> -->
-            </div>
-          </div>
-
-          <!--==================== QUALIFICATION2 ====================-->
-          <div class="qualification__sections">
-            <div class="qualification__content" data-content id="work">
-              <!-- 1 -->
-              <div class="qualification__data">
-                <div></div>
-                <div>
-                  <span class="qualification__rounder"> </span>
-                  <span class="qualification__line"> </span>
-                </div>
-                <div>
-                  <h3 class="qualification__title">Frontend Dev</h3>
-                  <span class="qualification__subtitle"> BK Holdings </span>
-                  <div class="qualification__calendar">
-                    <i class="uil uil-calendar-alt"></i>
-                    2021 - 202x
-                  </div>
-                </div>
-              </div>
-              <!-- 2 -->
-              <div class="qualification__data">
-                <div>
-                  <h3 class="qualification__title">Mobile Dev</h3>
-                  <span class="qualification__subtitle"> BK Holdings </span>
-                  <div class="qualification__calendar">
-                    <i class="uil uil-calendar-alt"></i>
-                    2021 - 202x
-                  </div>
-                </div>
-                <div>
-                  <span class="qualification__rounder"> </span>
-                  <span class="qualification__line"> </span>
-                </div>
-              </div>
-              <!-- 3 -->
-              <div class="qualification__data">
-                <div></div>
-                <div>
-                  <span class="qualification__rounder"> </span>
-                  <span class="qualification__line"> </span>
-                </div>
-                <div>
-                  <h3 class="qualification__title">Backend Dev</h3>
-                  <span class="qualification__subtitle"> BK Holdings </span>
-                  <div class="qualification__calendar">
-                    <i class="uil uil-calendar-alt"></i>
-                    2021 - 202x
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!--==================== SERVICES ====================-->
-      <section class="services section" id="services">
-        <h2 class="section__title">Dịch vụ</h2>
-        <span class="section__subtitle">Thích cái nào làm cái đó</span>
-        <div class="services__container container grid">
-          <!-- sv1 -->
-          <div class="services__content">
-            <div>
-              <i class="uil uil-pen services__icon"></i>
-              <h3 class="services__title">Design</h3>
-            </div>
-
-            <span
-              class="
-                button button--flex button--small button--link
-                services__button
-              "
-            >
-              Xem thêm
-              <i class="uil uil-arrow-right button__icon"></i>
-            </span>
-            <div class="services__modal">
-              <div class="services__modal-content">
-                <h4 class="services__modal-title">Design</h4>
-                <i class="uil uil-times services__modal-close"></i>
-                <ul class="services__modal-services grid">
-                  <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
-                    <p>Ghép ảnh</p>
-                  </li>
-                  <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
-                    <p>Tạo mẫu</p>
-                  </li>
-                  <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
-                    <p>Thiết kế logo</p>
-                  </li>
-                  <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
-                    <p>....</p>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <!-- sv2 -->
-          <div class="services__content">
-            <div>
-              <i class="uil uil-arrow services__icon"></i>
-              <h3 class="services__title">Frontend Dev</h3>
-            </div>
-
-            <span
-              class="
-                button button--flex button--small button--link
-                services__button
-              "
-            >
-              Xem thêm
-              <i class="uil uil-arrow-right button__icon"></i>
-            </span>
-            <div class="services__modal">
-              <div class="services__modal-content">
-                <h4 class="services__modal-title">Frontend</h4>
-                <i class="uil uil-times services__modal-close"></i>
-                <ul class="services__modal-services grid">
-                  <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
-                    <p>Dev React js</p>
-                  </li>
-                  <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
-                    <p>Mobile</p>
-                  </li>
-                  <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
-                    <p>WordPress</p>
-                  </li>
-                  <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
-                    <p>....</p>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <!-- sv3 -->
-          <div class="services__content">
-            <div>
-              <i class="uil uil-server services__icon"></i>
-              <h3 class="services__title">Backend</h3>
-            </div>
-            <span
-              class="
-                button button--flex button--small button--link
-                services__button
-              "
-            >
-              Xem thêm
-              <i class="uil uil-arrow-right button__icon"></i>
-            </span>
-            <div class="services__modal">
-              <div class="services__modal-content">
-                <h4 class="services__modal-title">Backend</h4>
-                <i class="uil uil-times services__modal-close"></i>
-                <ul class="services__modal-services grid">
-                  <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
-                    <p>Deploy Webapp</p>
-                  </li>
-                  <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
-                    <p>Thiết kế DB</p>
-                  </li>
-                  <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
-                    <p>....</p>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!--==================== PORTFOLIO ====================-->
-      <section class="portfolio section" id="portfolio"></section>
-
-      <!--==================== PROJECT IN MIND ====================-->
-      <section class="project section"></section>
-
-      <!--==================== TESTIMONIAL ====================-->
-      <section class="testimonial section"></section>
-
-      <!--==================== CONTACT ME ====================-->
-      <section class="contact section" id="contact"></section>
-    </main>
-
-    <!--==================== FOOTER ====================-->
-    <footer class="footer">
-      <div class="footer__bg">
-        <div class="footer__container container grid">
-          <div>
-            <h1 class="footer__title">Thanh</h1>
-            <span class="footer__subtitle"> Frontend Developer </span>
-          </div>
-          <ul class="footer__links">
-            <li>
-              <a href="#home" class="footer__link">Home</a>
-            </li>
-            <li><a href="#about" class="footer__link">Về tôi</a></li>
-            <li><a href="#services" class="footer__link">Dịch vụ</a></li>
-          </ul>
-          <div class="footer__socials">
-            <a
-              href="https://fb.me/thanh.dz.az"
-              target="_blank"
-              class="footer__social"
-              ><i class="uil uil-facebook-f"></i
-            ></a>
-            <a href="#" target="_blank" class="footer__social"
-              ><i class="uil uil-youtube"></i
-            ></a>
-            <a
-              href="https://github.com/thanhdzaz"
-              target="_blank"
-              class="footer__social"
-              ><i class="uil uil-github-alt"></i
-            ></a>
-          </div>
-        </div>
-        <p class="footer__copy">&#169; Me</p>
       </div>
-    </footer>
+      <hr class="horizon" style="bottom: 0" />
+      <script></script>
+      <script src="main.js"></script>
+    </div>
 
-    <!--==================== SCROLL TOP ====================-->
-
-    <a href="#" class="scrollup" id="scroll-up">
-      <i class="uil uil-arrow-up scrollup__icon"> </i>
-    </a>
-
-    <!--==================== SWIPER JS ====================-->
-    <script src="assets/js/swiper-bundle.min.js"></script>
-
-    <!--==================== MAIN JS ====================-->
-    <script src="assets/js/main.js"></script>
+    <div class="f2">
+      <div class="con-left">
+        <!-- <div class="mem"></div>
+      <div class="mem"></div>
+      <div class="mem"></div> -->
+        <center
+          style="
+            font-size: 80px;
+            margin-top: 22%;
+            text-transform: uppercase;
+            color: rgb(253, 0, 177);
+          "
+        >
+          Nothing over here!!
+        </center>
+      </div>
+    </div>
   </body>
 </html>

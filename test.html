@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    video::cue {
+  background-image: linear-gradient(to bottom, dimgray, lightgray);
+  color: papayawhip;
+}
+
+video::cue(b) {
+  color: peachpuff;
+}
+  </style>
+</head>
+<body>
+  <audio id="video" controls style="margin-top: 100px;">
+    <source src="mood.mp3" >
+    <track kind="subtitles" label="Eu"  src="subtile.vtt" srclang="en" default></track>
+  </audio>
+</body>
+</html>
