@@ -6,115 +6,134 @@
     <meta name="description" content="Here is some things about me." />
     <meta name="keywords" content="Chả mong gì chỉ mong giàu 🤣🤣🤣" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" href="logo.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="logo.ico" type="image/x-icon" />
     <script src="warpspeed.min.js"></script>
     <title>Thanh Cute</title>
-  
   </head>
   <body>
-   <div class="f1">
-    <div class="main">
-      <div id="background">
-        <canvas
-          id="bg_canvas"
-          style="position: fixed; top: 0; left: 0; width: 100%; height: 100%"
-        ></canvas>
-        <script>
-          var x = new WarpSpeed("bg_canvas",{"speed":3,"speedAdjFactor":0.03,"density":0.7,"shape":"circle","warpEffect":true,"warpEffectLength":6,"depthFade":true,"starSize":3,"backgroundColor":"hsl(263,45%,7%)"});
-        </script>
-      </div>
+    <div class="f1">
+      <div class="main">
+        <div id="background">
+          <canvas
+            id="bg_canvas"
+            style="position: fixed; top: 0; left: 0; width: 100%; height: 100%"
+          ></canvas>
+          <script>
+            var x = new WarpSpeed("bg_canvas", {
+              speed: 3,
+              speedAdjFactor: 0.03,
+              density: 0.7,
+              shape: "circle",
+              warpEffect: true,
+              warpEffectLength: 6,
+              depthFade: true,
+              starSize: 3,
+              backgroundColor: "hsl(263,45%,7%)",
+            });
+          </script>
+        </div>
 
-      <div class="bar-main">
-        <a
-          href="javascript:delay('https://fb.me/thanh.dz.az')"
-          id="btn1"
-          class="button1 bouncy"
-          >Facebook</a
-        >
-        <a
-          href="javascript:delay('https://github.com/thanhdzaz')"
-          id="btn2"
-          class="button1 bouncy"
-          style="animation-delay: 0.07s"
-          >Github</a
-        >
-        <a
-          href="javascript:delay('https://www.youtube.com/channel/UCcPENE9Ts_LdKNfqiDN00xQ')"
-          id="btn3"
-          class="button1 bouncy"
-          style="animation-delay: 0.14s"
-          >YouTube</a
-        >
-        <a
-          href="javascript:delay('mp3.html')"
-          id="btn4"
-          class="button1 bouncy"
-          style="animation-delay: 0.21s"
-          >About me</a
-        >
+        <div class="bar-main">
+          <a
+            href="javascript:delay('https://fb.me/thanh.dz.az')"
+            id="btn1"
+            class="button1 bouncy"
+            >Facebook</a
+          >
+          <a
+            href="javascript:delay('https://github.com/thanhdzaz')"
+            id="btn2"
+            class="button1 bouncy"
+            style="animation-delay: 0.07s"
+            >Github</a
+          >
+          <a
+            href="javascript:delay('https://www.youtube.com/channel/UCcPENE9Ts_LdKNfqiDN00xQ')"
+            id="btn3"
+            class="button1 bouncy"
+            style="animation-delay: 0.14s"
+            >YouTube</a
+          >
+          <a
+            href="javascript:delay('index2.html')"
+            id="btn4"
+            class="button1 bouncy"
+            style="animation-delay: 0.21s"
+            >About me</a
+          >
+        </div>
+        <hr class="horizon" style="top: 0" />
+        <figure id="control_bar">
+          <figcaption>Listen to "Mood Remix":</figcaption>
+          <br />
+          <audio id="audio_hie" controls src="mood.mp3"></audio>
+        </figure>
+        <div class="avatar">
+          <img
+            src="main_logo.jpg"
+            alt=""
+            id="img"
+            style="border-radius: 50%; transition: 0.1s"
+          />
+        </div>
+        <div class="content">
+          <table>
+            <tr>
+              <td colspan="3">
+                Hi there I'm
+                <span style="text-transform: uppercase">Thanh</span>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="3">I'm a Frontend Developer</td>
+            </tr>
+            <tr>
+              <td colspan="3">
+                With 1 Years experience in Reactjs & React Native
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+            </tr>
+            <tr>
+              <td>
+                <div style="position: relative">
+                  <button class="sroll-down" onclick="gotoNextPl()">
+                    Next
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
       </div>
-      <hr class="horizon" style="top: 0">
-      <figure id="control_bar">
-        <figcaption>Listen to "Mood Remix":</figcaption>
-        <br>
-        <audio id="audio_hie"
-            controls
-            src="mood.mp3">
-           
-
-                
-        </audio> 
-       
-    </figure>
-      <div class="avatar">
-        <img src="main_logo.jpg" alt="" id="img" style="border-radius: 50%;transition: 0.1s;">
-      </div>
-      <div class="content">
-        <table>
-          <tr>
-            <td colspan="3">Hi there I'm <span style="text-transform: uppercase">Thanh</span></td>
-           
-            
-          </tr>
-          <tr>
-            <td colspan="3">I'm learning to be IT Engineer</td>
-            
-          </tr>
-          <tr>
-            <td colspan="3">....................</td>
-          </tr>
-          <tr>
-            <td></td>
-            
-          </tr>
-          <tr>
-            <td></td>
-            
-          </tr>
-          <tr>
-            <td></td>
-          </tr>
-          <tr>
-            <td><div style="position: relative;"><button class="sroll-down" onclick="gotoNextPl()">Next</button></div></td>
-          </tr>
-        </table>
-      </div>
+      <hr class="horizon" style="bottom: 0" />
+      <script></script>
+      <script src="main.js"></script>
     </div>
-    <hr class="horizon" style="bottom: 0;">
-    <script>
-      
-    </script>
-    <script src="main.js"></script>
-  </div>
 
-  <div class="f2">
-    <div class="con-left">
-      <!-- <div class="mem"></div>
+    <div class="f2">
+      <div class="con-left">
+        <!-- <div class="mem"></div>
       <div class="mem"></div>
       <div class="mem"></div> -->
-      <center style="font-size: 80px;margin-top: 22%; text-transform: uppercase; color: aliceblue;"> Nothing over here!!</center>
+        <center
+          style="
+            font-size: 80px;
+            margin-top: 22%;
+            text-transform: uppercase;
+            color: rgb(253, 0, 177);
+          "
+        >
+          Nothing over here!!
+        </center>
+      </div>
     </div>
-
-  </div>
   </body>
 </html>
