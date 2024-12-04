@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <title>Audio Visualizer</title>
+
+    <style>
+      .container.audio {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 20px;
+      }
+      #frequencyCanvas {
+        margin-left: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container audio">
+      <input type="text" id="audioLink" placeholder="Enter audio URL" />
+      <input type="file" id="audioFile" accept="audio/*" />
+      <input
+        type="range"
+        id="volumeControl"
+        min="0"
+        max="1"
+        step="0.01"
+        value="1"
+      />
+      <button id="confirmButton" class="btn btn-success">Confirm</button>
+    </div>
+    <canvas id="frequencyCanvas" width="800" height="400"></canvas>
+    <script>
+      class AudioVisualizer {
+        constructor() {
+          this.audioContext = new (window.AudioContext ||
+            window.webkitAudioContext)();
+          this.analyser = this.audioContext.createAnalyser();
+          this.analyser.fftSize = 2048;
+          this.bufferLength = this.analyser.frequencyBinCount;
+          this.dataArray = new Uint8Array(this.bufferLength);
+          this.audio = new Audio();
+          this.audio.crossOrigin = "anonymous";
+          this.source;
+          this.gainNode = this.audioContext.createGain();
+          this.audio.addEventListener("canplay", () => {
+            if (!this.source) {
+              this.source = this.audioContext.createMediaElementSource(
+                this.audio
+              );
+              this.source.connect(this.gainNode);
+              this.gainNode.connect(this.analyser);
+              this.analyser.connect(this.audioContext.destination);
+            }
+            this.audio.play();
+            this.draw();
+          });
+        }
+
+        draw = () => {
+          requestAnimationFrame(this.draw);
+          this.analyser.getByteFrequencyData(this.dataArray);
+
+          const canvas = document.getElementById("frequencyCanvas");
+          const canvasCtx = canvas.getContext("2d");
+          canvasCtx.clearRect(0, 0, canvas.width, canvas.height);
+
+          const barWidth = (canvas.width / this.bufferLength) * 2.5;
+          let barHeight;
+          let x = 0;
+
+          // Calculate the current volume
+          const volume =
+            this.dataArray.reduce((a, b) => a + b, 0) / this.bufferLength;
+
+          for (let i = 0; i < this.bufferLength; i++) {
+            barHeight = this.dataArray[i] * (volume / 128); // Increase strength by current volume
+
+            canvasCtx.fillStyle = "rgb(" + (barHeight + 100) + ",50,50)";
+            canvasCtx.fillRect(
+              x,
+              canvas.height - barHeight / 2,
+              barWidth,
+              barHeight / 2
+            );
+
+            x += barWidth + 1;
+          }
+        };
+
+        playPause = () => {
+          const audioLink = document.getElementById("audioLink").value;
+          const audioFile = document.getElementById("audioFile").files[0];
+          if (audioLink) {
+            this.audio.src = audioLink;
+          } else if (audioFile) {
+            const objectURL = URL.createObjectURL(audioFile);
+            this.audio.src = objectURL;
+          }
+          this.audio.load();
+        };
+
+        setVolume = (value) => {
+          this.gainNode.gain.value = value;
+        };
+      }
+
+      var audioVisualizer;
+
+      window.onload = () => {
+        const canvas = document.getElementById("frequencyCanvas");
+        const windowWidth = window.innerWidth;
+
+        canvas.width = windowWidth - 40;
+
+        document
+          .getElementById("confirmButton")
+          .addEventListener("click", () => {
+            if (!audioVisualizer) {
+              audioVisualizer = new AudioVisualizer();
+            }
+            audioVisualizer.playPause();
+          });
+
+        document
+          .getElementById("volumeControl")
+          .addEventListener("input", (event) => {
+            if (!audioVisualizer) {
+              audioVisualizer = new AudioVisualizer();
+            }
+            audioVisualizer.setVolume(event.target.value);
+          });
+      };
+    </script>
+  </body>
+</html>
